@@ -147,4 +147,10 @@ body {
     color: #1c1e21;
     font-size: 14px;
 }
+@media (max-width: 900px) {
+    .left{
+        display: none;
+    }
+}
+
 

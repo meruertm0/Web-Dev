@@ -287,7 +287,7 @@ details p {
     width: 175;
     height: 175%;
     object-fit: contain;
-    padding: px;
+    padding: px
 }
 
 .card_font {
@@ -308,6 +308,7 @@ details p {
     text-decoration: none;
     font-weight: 600;
 }
+
 
 @media (max-width: 900px) {
     .main_cards {
