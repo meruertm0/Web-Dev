@@ -1,0 +1,88 @@
+/* общий фон */
+:host {
+  display: block;
+  background: #ffffff;
+  min-height: 100vh;
+  font-family: Inter, system-ui, Arial, sans-serif;
+  color: #111827;
+}
+
+/* верхняя плашка */
+.topbar {
+  margin: 18px auto 12px;
+  max-width: 980px;
+  background: #f3e7d6;
+  border-radius: 12px;
+  padding: 16px 18px;
+  border: 1px solid rgba(0,0,0,0.06);
+}
+
+.brand {
+  text-align: center;
+  font-weight: 700;
+  font-size: 22px;
+  letter-spacing: 0.2px;
+}
+
+.brand-title { color: #111827; }
+.brand-sep { margin: 0 6px; color: #111827; }
+.brand-x { margin: 0 6px; color: #111827; opacity: 0.7; }
+.brand-kaspi { color: #ef4444; }
+.brand-logo { margin-left: 6px; }
+
+/* ряд категорий */
+.cats-row {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 8px auto 0;
+  max-width: 980px;
+  flex-wrap: wrap;
+}
+
+/* кнопки */
+.cat-btn {
+  border: 1px solid #d1d5db;
+  background: #ffffff;
+  padding: 8px 14px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.cat-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+}
+
+.cat-btn.active {
+  background: #111827;
+  color: #ffffff;
+  border-color: #111827;
+}
+
+/* основная часть */
+.page {
+  max-width: 980px;
+  margin: 18px auto;
+  padding: 0 12px 30px;
+}
+
+/* приветственный блок */
+.hero {
+  text-align: center;
+  margin-top: 22px;
+}
+
+.hero h1 {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.hero p {
+  margin: 8px 0 0;
+  color: #6b7280;
+  font-size: 14px;
+}

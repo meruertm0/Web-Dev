@@ -1,0 +1,31 @@
+<header class="topbar">
+  <div class="brand">
+    <span class="brand-title">Apple Store</span>
+    <span class="brand-sep"></span>
+    <span class="brand-x">x</span>
+    <span class="brand-kaspi">Kaspi</span>
+    <span class="brand-logo">🛒</span>
+  </div>
+</header>
+
+<nav class="cats-row">
+  @for (c of categories; track c.id) {
+    <button
+      class="cat-btn"
+      [class.active]="c.id === selectedCategoryId"
+      (click)="selectCategory(c.id)">
+      {{ c.name }}
+    </button>
+  }
+</nav>
+
+<main class="page">
+  @if (selectedCategoryId === null) {
+    <section class="hero">
+      <h1>Добро пожаловать</h1>
+      <p>Выберите категорию, чтобы начать покупку</p>
+    </section>
+  } @else {
+    <app-product-list [products]="selectedProducts"></app-product-list>
+  }
+</main>

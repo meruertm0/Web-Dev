@@ -1,0 +1,51 @@
+<div class="product-card">
+  <div class="image-container">
+    <img [src]="getProductImage()" [alt]="product.name" class="main-img">
+  </div>
+
+  <div class="thumbnail-list">
+    <img
+      [src]="product.image"
+      (click)="changeImage(product.image)"
+      [class.selected]="getProductImage() === product.image"
+    >
+
+    <img
+      *ngFor="let img of product.images"
+      [src]="img"
+      (click)="changeImage(img)"
+      [class.selected]="getProductImage() === img"
+    >
+  </div>
+
+  <h3>{{ product.name }}</h3>
+  <p class="description">{{ product.description }}</p>
+
+  <div class="info">
+    <span class="price">{{ product.price | number:'1.0-0' }} ₸</span>
+    <span class="rating">⭐ {{ product.rating }}</span>
+    <button
+      type="button"
+      class="like-btn"
+      [class.liked]="liked"
+      (click)="toggleLike()"
+      aria-label="like"
+    >
+      <span class="heart">❤</span>
+      <span class="likes">{{ product.likes }}</span>
+    </button>
+  </div>
+
+  <div class="actions">
+    <a [href]="product.link" target="_blank" class="buy-btn" rel="noopener noreferrer">
+      Открыть в Kaspi
+    </a>
+
+    <div class="share-buttons">
+      <button (click)="share('wa')" class="wa-btn">WhatsApp</button>
+      <button (click)="share('tg')" class="tg-btn">Telegram</button>
+
+      <button type="button" class="del-btn" (click)="onDeleteClick()">Удалить</button>
+    </div>
+  </div>
+</div>
