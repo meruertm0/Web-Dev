@@ -277,15 +277,15 @@ details p {
     border-radius: 50%;
     background: #eef1f4;
     display: inline-flex;
-    align-items: center;
-    justify-content: center;
+    align-items: left;
+    justify-content: left;
     margin-bottom: 12px;
     overflow: hidden;
 }
 
 .icon img {
-    width: 175;
-    height: 175%;
+    width: 75px;
+    height: 75%;
     object-fit: contain;
     padding: px
 }

@@ -3,7 +3,6 @@ const addBtn = document.getElementById("addBtn");
 const list = document.getElementById("todoList");
 
 function createTodoItem(text) {
-  // <li class="todo">
   const li = document.createElement("li");
   li.className = "todo";
 
@@ -28,6 +27,7 @@ function createTodoItem(text) {
 
   checkbox.addEventListener("change", () => {
     li.classList.toggle("done", checkbox.checked);
+    li.reorderTodos();
   });
 
   delBtn.addEventListener("click", () => {
@@ -35,6 +35,16 @@ function createTodoItem(text) {
   });
 
   return li;
+}
+
+function reorderTodos() {
+  const items = Array.from(list.children);
+  items.sort((a, b) => {
+    const aDone = a.classList.contains("done");
+    const bDone = b.classList.contains("done");
+    return aDone - bDone; 
+  });
+  items.forEach(i => list.appendChild(i));
 }
 
 function addTodo() {
@@ -46,7 +56,9 @@ function addTodo() {
 
   input.value = "";
   input.focus();
+  reorderTodos();
 }
+
 
 addBtn.addEventListener("click", addTodo);
 
