@@ -1,3 +1,4 @@
+
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Product } from '../../models/product.model';
@@ -33,5 +34,8 @@ export class ProductCard {
         : `https://t.me/share/url?url=${encodedLink}&text=${encodedText}`;
 
     window.open(url, '_blank');
+  }
+  setRating(rating: number): void {
+    this.product.rating = rating;
   }
 }

@@ -13,4 +13,7 @@ import { ProductCard } from '../product-card/product-card';
 })
 export class ProductListComponent {
   products: Product[] = PRODUCTS;
+  sortDirection: 'asc' | 'desc' = 'asc';
+
+  
 }

@@ -23,7 +23,12 @@
 
   <div class="info">
     <span class="price">{{ product.price | number:'1.0-0' }} ₸</span>
-    <span class="rating">⭐ {{ product.rating }}</span>
+    <span class="rating clickable-stars">
+      <ng-container *ngFor="let star of [1,2,3,4,5]">
+        
+      </ng-container>
+      <span class="rating-value">({{ product.rating }})</span>
+    </span>
   </div>
 
   <div class="actions">

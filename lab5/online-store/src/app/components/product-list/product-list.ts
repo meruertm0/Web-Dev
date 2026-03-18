@@ -12,9 +12,19 @@ import { ProductCard } from '../product-card/product-card';
 })
 export class ProductListComponent {
   @Input({ required: true }) products: Product[] = [];
+  sortDirection: 'asc' | 'desc' = 'asc';
+
   onDelete(id: number): void {
-  this.products = this.products.filter(p => p.id !== id);
+    this.products = this.products.filter(p => p.id !== id);
   }
+
+  sortByPrice(direction: 'asc' | 'desc') {
+    this.sortDirection = direction;
+    this.products = [...this.products].sort((a, b) => {
+      return direction === 'asc' ? a.price - b.price : b.price - a.price;
+    });
+  }
+
 }
 
 
